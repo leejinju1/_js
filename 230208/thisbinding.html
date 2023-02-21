@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script> // var변수는 window에 만들어지는것 window객체 참조가 일어나서 this 키워드 사용.
+    // var name; || globalThis.name || window name
+    var name = "헬로우";
+
+    let obj = {
+        name : "객체"
+    }
+
+    let myfunc = function someFunction() {
+        console.log(this.name);
+    }
+
+    function hoisted() {
+        console.log(this.name)
+    }
+
+    obj.fun1 = myfunc;
+    obj.fun2 = hoisted;
+
+    obj.fun1();
+    obj.fun2();
+
+    myfunc();
+
+    let binding = hoisted.bind(obj)
+    binding();
+
+    hoisted.apply(obj);
+    hoisted.call(obj);
+
+    let arrow = () => console.log(this.name);
+    arrow();
+
+    obj.fun3 = arrow;
+    obj.fun3();
+
+    let another =  {
+        name: "다른객체",
+        funAnother : arrow
+    }
+
+    another.funAnother();
+
+    class MyClass {
+        name = "클래스안 name";
+        classMethod = () => console.log(this.name)
+    }
+
+    let obj3 = new MyClass();
+    obj3.classMethod();
+</script>
+</html>

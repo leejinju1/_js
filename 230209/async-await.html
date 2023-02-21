@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    async function myfunc() {
+        throw new Error("수행 도중 에러가 발생했습니다.");
+        return 100;
+    }
+
+    async function process() {
+        try {
+            let num = await myfunc();
+            console.log(num);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    process();
+</script>
+</html>

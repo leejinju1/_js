@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform"> 
+        <input type="email" id="email">
+        <button type="submit">submit</button>
+    </form>
+    <p id="message"></p>
+</body>
+<script>
+    const myform = document.getElementById("myform")
+    
+    // myform.addEventListener("submit", function (e) {
+    // })
+    
+    
+    myform.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let input = document.getElementById("email");
+        let email = input.value;
+
+        if (email) {
+            let p = document.getElementById("message");
+
+            fetch("http://localhost:8080", {
+                method: "POST",
+                headers:  {
+                    "Content-Type": "application/x-www-from-urlencoded"
+                },
+                body: new FormData(myform)
+            })
+                .then((resp) => resp.json())
+                .then((obj) => console.log(obj));
+            
+                
+            p.innerText = "잠시만 기다려주세요";
+        }
+    })
+</script>
+</html>

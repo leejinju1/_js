@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    document.cookie = "mycookie=value";
+    document.cookie = "another=newvalue";
+
+    let key = "한글 이름값";
+    let value = "인코딩해야겠지?";
+
+    let encoded = encodeURIComponent(key) + "=" + encodeURIComponent(value);
+    document.cookie = encoded;
+
+    let cookieWithMaxage = "test=value; max-age=3600";
+    document.cookie = cookieWithMaxage;
+
+    console.log(document.cookie);
+
+    console.log(decodeURIComponent(key));
+</script>
+</html>

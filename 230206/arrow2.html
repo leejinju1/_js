@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var someValue = "전역";
+    let obj = {
+        someValue : "객체의 프로퍼티"
+    }
+
+    let normalFunc = function () {
+        console.log("해당 Context의 값 출력합니다." + this.someValue);
+    }
+
+    let arrowFunc = () => { // no binding
+        console.log("해당 Context의 값 출력합니다." + this.someValue);
+    }
+
+    // normalFunc();
+    // arrowFunc();
+    obj.myFunc = arrowFunc;
+    obj.myFunc();
+</script>
+</html>

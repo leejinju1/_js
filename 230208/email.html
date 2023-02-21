@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myform"> 
+        <input type="email" id="email">
+        <button id="emaildupli">중복 확인하기</button>
+    </form>
+    <p id="message"></p>
+</body>
+<script>
+    let myform = document.getElementById("myform")
+    let btn = document.getElementById("emaildupli");
+    
+    myform.addEventListener("submit", function (e) {
+        e.preventDefault();
+    })
+
+
+    btn.addEventListener("click", function (e) {
+        let input = document.getElementById("email");
+        let email = input.value;
+
+        if (email) {
+            let p = document.getElementById("message");
+
+            fetch("http://localhost:8080/api/userinfo/emaildupli?email=" + email)
+                .then((resp) => resp.json())
+                .then((obj) => {
+                    if (obj.count == 0 ) {
+                        p.innerText = "사용할 수 있는 이메일";
+                    } else if (obj.count == 1) {
+                        p.innerText = "중복된 이메일";
+                    } else {
+                        p.innerText = "서비스 장애가 발생했습니다"
+                    }
+                })
+                .catch((e) => console.log(e))
+            
+                
+            p.innerText = "잠시만 기다려주세요";
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Person {
+        #name;
+        #age;
+
+        constructor(name, age) {
+            this.#name = name;
+            this.#age = age;
+        }
+
+        get name() {
+            return this.#name;
+        }
+
+        set name(name) {
+            this.#name = name;
+        }
+
+        toString() {
+            return `사람이름: ${this.#name}, 사람나이: ${this.#age}`;
+        }
+
+        valueOf() {
+            return this.#age;
+        }
+
+        printAll() {
+            console.log(this.#name, this.#age);
+        }
+    }
+
+    let p1 = new Person("사람이름", 44);
+    let p2 = new Person("사람2", 56);
+
+    p1.printAll();
+    p2.printAll();
+
+    p1.name = "새이름";
+    console.log(p1.name);
+    console.log(p1.age);
+    console.log(p1.toString());
+    console.log(p1 + "문자열 연산 시에는 toString이 호출됩니다.");
+    console.log(p1.valueOf());
+    console.log(p1 + 100);
+</script>
+</html>

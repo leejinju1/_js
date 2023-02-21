@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Human(name, age) {
+        this.name = name;
+        this.age = age;
+
+        this.hello = function () {
+            console.log("Hello. I'm " + this.name);
+        }
+    }
+
+    let h1 = new Human("둘리", 15);
+    let h2 = new Human("희동", 4);
+
+    h1.hello();
+    h2.hello();
+</script>
+</html>

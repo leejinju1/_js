@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // let arr = [1, 2, 3, 4, 5];
+
+    // let filter = arr.filter((x) => x % 2 == 0);
+
+    // console.log(filter);
+
+    // let map = filter.map((x) => x** 2);
+
+    // console.log(map);
+
+    // let sum = arr.filter((x) => x % 2 == 0)
+    //             .map((X) => X** 2)
+    //             .reduce((a, b) => a + b);
+
+    // console.log(sum);
+
+    // 다음과 같은 배열이 있을 때 '문자열' 타입의 원소들을 찾아 배열로 생성해보세요.
+
+    let some = [1, true, 'zzz', 55.33, "ㅋㅋㅋ", {}];
+
+    let strs = some.filter((s) => typeof s === "string");
+
+    console.log(strs);
+</script>
+</html>

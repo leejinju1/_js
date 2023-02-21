@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class MyObj {
+        value = "문자열값";
+    }
+
+    let obj1 = new MyObj();
+    let obj2 = new MyObj();
+
+    obj1.printValue = function () {
+        console.log(this.value);
+    }
+
+    obj1.printValue();
+    // obj2.printValue();
+
+    MyObj.prototype.sameFunc = function() {
+        console.log(this.value);
+    }
+
+    obj1.sameFunc();
+    obj2.sameFunc();
+</script>
+</html>

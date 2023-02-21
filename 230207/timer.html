@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dis id="timer">
+        <button id="btn">시작</button>
+        <span id="time-number">0</span>
+        <button id="btn2">종료</button>
+    </dis>
+</body>
+<script>
+    let count = document.getElementById("time-number");
+    let btn = document.getElementById("btn");
+    let btn2 = document.getElementById("btn2");
+    let num = 0;
+    let intervalNum;
+
+    count.innerText = num;
+
+    btn.addEventListener("click", (e) => {
+        if (!intervalNum) {
+            intervalNum = setInterval(() => {
+                num++;
+                count.innerText = num;
+            }, 500);
+        }
+    });
+    btn2.addEventListener("click", (e) => {
+        if (intervalNum) {
+            clearInterval(intervalNum);
+            intervalNum = 0;
+        }
+    });
+</script>
+</html>

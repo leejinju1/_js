@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    async function randomSucess() {
+        if (Math.random() > 0.6) {
+            return true;
+        }
+        throw new Error("실패하였음")
+    }
+
+    async function myLoop(count = 0, second = 1000) {
+        try {
+            let result = await randomSucess();
+            console.log(result);
+        } catch (e) {
+            if (count >= 3) {
+                console.log("너무 많은 시도로 중단합니다.")
+                return;
+            }
+            console.log("다시 시도합니다.")
+            setTimeout(() => {
+                myLoop(count + 1, second * 2);
+            }, second);
+        }
+    }
+    console.log("시작")
+    myLoop();
+    console.log("끝")
+</script>
+</html>

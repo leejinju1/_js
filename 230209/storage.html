@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    localStorage.setItem("firstkey", "firstvalue");
+    localStorage.setItem("2", "f");
+    localStorage.setItem("3", "i");
+    localStorage.setItem("4", "s");
+    localStorage.setItem("5", "t");
+    let value = localStorage.getItem("firstkey");
+    console.log(value);
+    localStorage.removeItem("3");
+
+    let length = localStorage.length;
+    console.log(length);
+
+    for (let i = 0; i <localStorage.length; i++) {
+        let key = localStorage.key(0);
+        console.log(localStorage.getItem(key));
+    }
+
+    sessionStorage
+</script>
+</html>

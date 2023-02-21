@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let localVar = 3;
+    let globalVal = "시작시 초기화";
+    
+    function myFunc() {
+        let localVar = 10;
+        globalVal = "전역";
+        console.log(localVar);
+        console.log(globalVal);
+    }
+
+    console.log(globalVal);
+    myFunc();
+    console.log(localVar);
+    console.log(globalVal);
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input id="myText1" vlaue="zxcv"/>
+    <input id="myText2" vlaue="zxcv"/>    
+</body>
+<script>
+    let myText1 = document.getElementById("myText1");
+    let myText2 = document.getElementById("myText2");
+
+    myText1.addEventListener("change", function (e) {
+        console.log(myText1.value);
+    });
+
+    myText2.addEventListener("keydown", function (e) { // 키보드 눌렀을때 바로 반응
+        console.log(e.target.value);
+    });
+</script>
+</html>

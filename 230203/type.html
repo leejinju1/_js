@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let myNum = 10;
+    let muNum2 = 100.10;
+
+    console.log(typeof myNum, typeof muNum2);
+
+    let notANumber = 0 / 0;
+    let myNan = NaN;
+
+    console.log("값 : " + notANumber, "타입 : " + typeof notANumber);
+    console.log("값 : " + myNan, "타입 : " + typeof myNan);
+
+    console.log(NaN == NaN);
+    console.log(NaN === NaN);
+
+    console.log(window.isNaN(NaN));
+    console.log(Object.is(NaN, NaN))
+</script>
+</html>

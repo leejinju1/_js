@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let now = new Date();
+    let someday = new Date(2023, 2, 10, 14, 14, 30);
+
+    console.log(now);
+    console.log(someday);
+
+    let after = new Date(now.getTime() + 1000 * 60 * 60 * 24);
+
+    let localeString = now.toLocaleDateString();
+    console.log(localeString);
+</script>
+</html>

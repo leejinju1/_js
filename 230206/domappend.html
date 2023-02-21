@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+    <button id="btnCreate">텍스트 만들기</button>
+</body>
+<script>
+    let btn = document.getElementById("btnCreate");
+    let container = document.getElementById("container");
+    let num = 1;
+
+    btn.addEventListener("click", function (e) {
+        let myNewP = document.createElement("P");
+        myNewP.innerText = "Hello" + num;
+        num++;
+
+        container.prepend(myNewP); // append는 순서대로 아래로, prepend는 아래로 쌓인다.
+        // append 맨 끝 삽입
+        // prepend 맨 앞 삽입
+        // before 이전 삽입
+        // after 다음 삽입
+
+        // remove 삭제
+    });
+</script>
+</html>
